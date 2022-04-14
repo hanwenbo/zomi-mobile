@@ -12,7 +12,8 @@
     "lint": "walrus lint",
     "lint:commit": "walrus commitlint --env HUSKY_GIT_PARAMS",
     "doc:start": "dumi dev",
-    "doc:build": "dumi build"
+    "doc:build": "dumi build",
+    "local:link": "yarn link -A ~/javascript/utilsjs"
   },
   "devDependencies": {
     "@types/react": "^17.0.43",
@@ -48,10 +49,5 @@
     "react-virtualized": "^9.22.3",
     "remax": "^2.15.13",
     "smart-arraytotree": "^1.1.2"
-  },
-  "resolutions": {
-    "@hanwenbo/array": "portal:/Users/hanwenbo/javascript/utilsjs/packages/array",
-    "@hanwenbo/object": "portal:/Users/hanwenbo/javascript/utilsjs/packages/object",
-    "@hanwenbo/ui-mobile": "portal:/Users/hanwenbo/javascript/utilsjs/packages/ui-mobile"
   }
 }
