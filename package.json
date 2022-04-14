@@ -40,8 +40,9 @@
   "dependencies": {
     "@hanwenbo/array": "^0.0.5",
     "@hanwenbo/object": "^0.0.6",
-    "@hanwenbo/ui-mobile": "^0.0.14",
+    "@hanwenbo/ui-mobile": "^0.0.15",
     "@react-spring/web": "^9.4.4",
-    "react-native-web": "^0.17.7"
+    "react-native-web": "^0.17.7",
+    "umi-hd": "^5.0.1"
   }
 }
