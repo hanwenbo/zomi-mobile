@@ -4,7 +4,7 @@ import {Popup} from 'zomi-mobile'
 import {DemoBlock, lorem} from 'demos'
 
 export default () => {
-  const [visible1, setVisible1] = useState(false)
+  const [visible1, setVisible1] = useState(true)
   const icon = 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png'
   return (
     <>
@@ -43,7 +43,7 @@ export default () => {
                 {
                   key: 'confirm',
                   text: 'Yes',
-                  primary: true,
+                  white: true,
                 },
               ]}
             />

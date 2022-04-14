@@ -8,6 +8,7 @@ export type Action = {
   text: string
   disabled?: boolean
   danger?: boolean
+  white?: boolean
   primary?: boolean
   bold?: boolean
   onPress?: () => void | Promise<void>,
@@ -38,13 +39,13 @@ export const PopupActionButton: FC<{
     key={action.key}
     onPress={handleClick}
     bold={action.bold}
-    rectangular
     block
-    large
+    middle
     fillNone
     danger={!!action.danger}
+    white={!!action.white}
     primary={!!action.primary}
-    disabled={action.disabled}
+    disabled={!!action.disabled}
     loading={loading}
     style={[styles.button, props.buttonStyle]}
   >
