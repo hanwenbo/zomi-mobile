@@ -40,11 +40,8 @@
   "dependencies": {
     "@hanwenbo/array": "^0.0.5",
     "@hanwenbo/object": "^0.0.6",
-    "@hanwenbo/ui-mobile": "^0.0.11",
+    "@hanwenbo/ui-mobile": "^0.0.13",
     "@react-spring/web": "^9.4.4",
-    "ahooks": "^3.3.0",
-    "react-native-web": "^0.17.7",
-    "react-virtualized": "^9.22.3",
-    "smart-arraytotree": "^1.1.2"
+    "react-native-web": "^0.17.7"
   }
 }
