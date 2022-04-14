@@ -29,7 +29,7 @@ export default () => {
               visible={visible1}
               closeable
               onClose={() => {
-                // setVisible1(false)
+                setVisible1(false)
               }}
               autoClose
               skip

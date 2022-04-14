@@ -8,6 +8,7 @@ export default () => {
   const [visible2, setVisible2] = useState(false)
   const [visible3, setVisible3] = useState(false)
   const [visible4, setVisible4] = useState(false)
+  const [visible5, setVisible5] = useState(false)
 
   return (
     <>
@@ -132,13 +133,62 @@ export default () => {
               }}
             />
           </>
+
+          <Button
+            onPress={() => {
+              setVisible5(true)
+            }}
+          >
+            白色
+          </Button>
+          <Popup
+            light
+            title={'Welcome back, [name]!\n' +
+              '\n' +
+              'Don’t forget to check-in and unbox\n' +
+              'more rewards!'}
+            content={mockLongContent}
+            visible={visible5}
+            skip={true}
+            skipText={'跳过文案'}
+            closeable
+            autoClose
+            autoCloseText={'再过 {n} 秒关闭'}
+            onClose={()=>{
+              setVisible5(false)
+            }}
+            arrow={true}
+            onSkip={() => {
+              setVisible5(false)
+            }}
+            onArrow={() => {
+              setVisible5(false)
+            }}
+            onMaskClick={() => {
+              setVisible5(false)
+            }}
+            actions={[
+              {
+                key: 'cancel',
+                text: 'Cancel',
+                textStyle: {
+                  color: '#000',
+                },
+              },
+              {
+                key: 'confirm',
+                text: 'Yes',
+                primary: true,
+              },
+            ]}
+          />
         </Space>
       </DemoBlock>
     </>
   )
 }
 
-const mockLongContent = lorem.generateParagraphs(10)
+const mockLongContent = lorem.generateParagraphs(1)
 
 const mockContent = (
   <div style={{padding: '20px',color:"#FFFFFF"}}>{lorem.generateParagraphs(1)}</div>
