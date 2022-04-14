@@ -13,6 +13,7 @@ import {
 } from '@hanwenbo/ui-mobile'
 import {mergeProps} from "@hanwenbo/ui-mobile/es/utils/with-default-props"
 import {PopupActionButton} from "./popup-action-button"
+import {AutoClose, AutoCloseProps} from "./auto-close"
 
 export type PopupProps = Omit<PopupNativeProps,
   'visible'> & {} & {
@@ -23,7 +24,10 @@ export type PopupProps = Omit<PopupNativeProps,
   visible?: boolean,
   onSkip?: () => void,
   onArrow?: () => void,
-}
+  closeable?: boolean,
+  onClose?: () => void,
+  actions?: PopupActionButton[]
+} & AutoCloseProps
 
 
 const defaultProps = {
@@ -35,20 +39,34 @@ const defaultProps = {
   },
   content: null,
   title: null,
+  closeCutdownSecend: 5,
+  closeable: false,
+  autoClose: false,
+  autoCloseText: `closing in {n}s`
 }
 
 // @ts-ignore
 export const Popup: FC<PopupProps> = p => {
   const props = mergeProps(defaultProps, p)
-  const {title, content, skip, arrow} = props
+  const {title, content, skip, arrow, closeable, autoClose} = props
   const hasActions = props.actions && props.actions.length > 0
+
   return <PopupNative {...props}>
     <View style={styles.main}>
       <View style={styles.body}>
         {title && <View style={styles.titleWrap}>
           <ViewTextAuto style={styles.title}>{title}</ViewTextAuto>
-          {arrow && <TouchableOpacity onPress={props.onArrow}><Image source={require("./arrow.png")}
-                                                                     style={styles.arrow} /></TouchableOpacity>}
+          {arrow && <TouchableOpacity onPress={props.onArrow}>
+            <Image
+              source={require("./arrow.png")}
+              style={styles.arrow}
+            /></TouchableOpacity>}
+          {closeable && <TouchableOpacity onPress={props.onClose}>
+            <Image
+              source={require("./close.png")}
+              style={styles.close}
+            />
+          </TouchableOpacity>}
         </View>}
         {content && <ViewTextAuto style={styles.content}>{content}</ViewTextAuto>}
       </View>
@@ -77,6 +95,8 @@ export const Popup: FC<PopupProps> = p => {
           })}
         </Space>
       </View>}
+
+      {props.visible && autoClose && <AutoClose {...props} />}
     </View>
   </PopupNative>
 }
@@ -115,7 +135,11 @@ const styles = StyleSheet.create({
     width: 24,
     height: 24,
   },
+  close: {
+    width: 24,
+    height: 24,
+  },
   footer: {
     marginTop: 15,
-  },
+  }
 })
