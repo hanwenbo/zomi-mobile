@@ -1,0 +1,57 @@
+{
+  "name": "@hanwenbo/zomi-mobile",
+  "description": "ZOMI Mobile UI",
+  "repository": "git@github.com:hanwenbo/zomi-mobile.git",
+  "author": "9476400@qq.com",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "father-build",
+    "test": "walrus-test",
+    "prettier": "walrus prettier",
+    "lint": "walrus lint",
+    "lint:commit": "walrus commitlint --env HUSKY_GIT_PARAMS",
+    "doc:start": "dumi dev",
+    "doc:build": "dumi build"
+  },
+  "devDependencies": {
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "@types/react-native-web": "github:gtechnologies/react-native-web-ts-types",
+    "@use-gesture/react": "^10.2.11",
+    "@walrus/cli": "1.3.4",
+    "@walrus/preset-lint": "1.1.8",
+    "@walrus/release-cli": "1.0.5",
+    "@walrus/test": "1.3.0",
+    "dumi": "^1.1.40",
+    "f2-touchemulator": "^0.0.1",
+    "father-build": "1.20.4",
+    "globby": "^13.1.1",
+    "husky": "5.1.2",
+    "lorem-ipsum": "^2.0.4",
+    "qrcode.react": "^3.0.1",
+    "testing": "^2.0.1",
+    "typescript": "4.5.2"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "@hanwenbo/array": "^0.0.5",
+    "@hanwenbo/object": "^0.0.6",
+    "@hanwenbo/ui-mobile": "^0.0.11",
+    "@react-spring/web": "^9.4.4",
+    "ahooks": "^3.3.0",
+    "antd-mobile-icons": "^0.2.2",
+    "deepmerge": "^4.2.2",
+    "react-native-web": "^0.17.7",
+    "react-virtualized": "^9.22.3",
+    "remax": "^2.15.13",
+    "smart-arraytotree": "^1.1.2"
+  },
+  "resolutions": {
+    "@hanwenbo/array": "portal:/Users/hanwenbo/javascript/utilsjs/packages/array",
+    "@hanwenbo/object": "portal:/Users/hanwenbo/javascript/utilsjs/packages/object",
+    "@hanwenbo/ui-mobile": "portal:/Users/hanwenbo/javascript/utilsjs/packages/ui-mobile"
+  }
+}

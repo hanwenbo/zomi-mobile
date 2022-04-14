@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "module": "esnext",
+    "target": "esnext",
+    "lib": ["esnext", "dom"],
+
+    "paths": {
+      "demos": ["src/demos/index.ts"],
+    },
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+    "declaration": true,
+
+    /* Module Resolution Options */
+    "esModuleInterop": true,
+    "noImplicitReturns": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "jsx": "react",
+    /* error TS2300: Duplicate identifier 'LibraryManagedAttributes'. */
+    "baseUrl": ".",
+//    "skipLibCheck": true,
+//    "allowSyntheticDefaultImports": true
+  }
+}

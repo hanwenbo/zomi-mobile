@@ -1,0 +1,17 @@
+{
+  "name": "@hanwenbo/zomi-mobile-ui",
+  "version": "0.0.1",
+  "description": "Zomi Mobile",
+  "author": "9476400@qq.com",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "es"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
