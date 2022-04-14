@@ -14,6 +14,7 @@ import {
 import {mergeProps} from "@hanwenbo/ui-mobile/es/utils/with-default-props"
 import {PopupActionButton} from "./popup-action-button"
 import {AutoClose, AutoCloseProps} from "./auto-close"
+import {Skip,SkipProps} from "./skip"
 
 export type PopupProps = Omit<PopupNativeProps,
   'visible'> & {} & {
@@ -27,13 +28,15 @@ export type PopupProps = Omit<PopupNativeProps,
   closeable?: boolean,
   onClose?: () => void,
   actions?: PopupActionButton[]
-} & AutoCloseProps
+  light?: boolean,
+} & AutoCloseProps & SkipProps
 
 
 const defaultProps = {
   visible: false,
   arrow: false,
   skip: false,
+  skipText: 'Skip',
   bodyStyle: {
     backgroundColor: "transparent"
   },
@@ -42,7 +45,8 @@ const defaultProps = {
   closeCutdownSecend: 5,
   closeable: false,
   autoClose: false,
-  autoCloseText: `closing in {n}s`
+  autoCloseText: `closing in {n}s`,
+  light: false
 }
 
 // @ts-ignore
@@ -51,11 +55,16 @@ export const Popup: FC<PopupProps> = p => {
   const {title, content, skip, arrow, closeable, autoClose} = props
   const hasActions = props.actions && props.actions.length > 0
 
+
   return <PopupNative {...props}>
-    <View style={styles.main}>
+    <View style={[styles.main,{
+      backgroundColor: props.light ? "rgba(255, 255, 255, 0.85)" : "rgba(0,0,0,0.85)"
+    }]}>
       <View style={styles.body}>
         {title && <View style={styles.titleWrap}>
-          <ViewTextAuto style={styles.title}>{title}</ViewTextAuto>
+          <ViewTextAuto style={[styles.title,{
+            color: props.light ? "#000" : "#fff"
+          }]}>{title}</ViewTextAuto>
           {arrow && <TouchableOpacity onPress={props.onArrow}>
             <Image
               source={require("./arrow.png")}
@@ -68,11 +77,11 @@ export const Popup: FC<PopupProps> = p => {
             />
           </TouchableOpacity>}
         </View>}
-        {content && <ViewTextAuto style={styles.content}>{content}</ViewTextAuto>}
+        {content && <ViewTextAuto style={[styles.content,{
+          color: props.light ? "#000" : "#fff"
+        }]}>{content}</ViewTextAuto>}
       </View>
-      {skip && <TouchableOpacity onPress={props.onSkip} style={styles.skip}>
-        <Text style={styles.skip}>Skip</Text>
-      </TouchableOpacity>}
+      {skip && <Skip {...props} />}
 
       {hasActions && <View style={[styles.footer]}>
         <Space block>

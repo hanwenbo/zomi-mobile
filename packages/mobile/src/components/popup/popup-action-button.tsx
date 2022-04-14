@@ -1,7 +1,7 @@
 import React, {FC, useState} from 'react'
 import {Button, StyleSheet} from "@hanwenbo/ui-mobile"
 // @ts-ignore
-import {ViewStyle} from "react-native-web";
+import {TextStyle, ViewStyle} from "react-native-web";
 
 export type Action = {
   key: string | number
@@ -12,6 +12,7 @@ export type Action = {
   primary?: boolean
   bold?: boolean
   onPress?: () => void | Promise<void>,
+  textStyle?: TextStyle
 }
 
 export const PopupActionButton: FC<{
@@ -48,6 +49,7 @@ export const PopupActionButton: FC<{
     disabled={!!action.disabled}
     loading={loading}
     style={[styles.button, props.buttonStyle]}
+    textStyle={action.textStyle}
   >
     {action.text}
   </Button>

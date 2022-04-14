@@ -9,3 +9,6 @@
 
 方式三：
 <code src="./demos/demo3.tsx"></code>
+
+白色：
+<code src="./demos/demo4.tsx"></code>

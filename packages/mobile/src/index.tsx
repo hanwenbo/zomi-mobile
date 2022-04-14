@@ -151,7 +151,7 @@ ThemeManager.loadTheme({
         color: 'red',
       },
       fillNone: {
-        color: Colors.white
+        color: Colors.primary
       },
       fillOutline: {
         color: Colors.white,
