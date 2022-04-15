@@ -1,6 +1,5 @@
-import React, {useState, useRef, useEffect} from 'react'
+import React, {useState} from 'react'
 import {
-  FloatingPanel,
   View,
   Text,
   WhiteSpace,
@@ -11,12 +10,25 @@ import {
   Flex,
   TextInput
 } from '@hanwenbo/ui-mobile'
-
-const defaultHeight = 260
-const anchors = [0, defaultHeight, 520]
+import {Controller, useForm} from "react-hook-form";
 
 export default () => {
   const icon = "https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png"
+
+  const {control, setValue, setError, watch, handleSubmit, formState: {errors, isSubmitting}} = useForm({
+    defaultValues: {
+      verificationCode: "",
+    }
+  });
+  const [step, setStep] = useState(1);
+  const watchAllFields = watch();
+
+  const disabled = !watchAllFields.verificationCode
+
+  const onVerifyCode = async (values) => {
+
+  }
+
   return <View style={styles.main}>
     <View>
       <View style={styles.header}>
@@ -25,17 +37,45 @@ export default () => {
         <Text style={styles.headerText}>It may take up to 3 minuts to receive your message.</Text>
       </View>
       <Flex>
-        <Button>Resend</Button>
+        <Button
+          primary
+        >Resend</Button>
         <Text style={styles.signUpBtn}>Time countdown</Text>
       </Flex>
       <WhiteSpace size={18} />
       <Divider><Text style={styles.dText}>Verification</Text></Divider>
       <WhiteSpace size={18} />
-      <TextInput placeholder={'6 digits verification  code'} style={StyleSheet.flatten(styles.input)} />
+      <Controller
+        name="verificationCode"
+        control={control}
+        rules={{
+          required: {
+            value: true,
+            message: "Verification code is required"
+          },
+        }}
+        render={({field: {onChange, onBlur, value}}) => (
+          <TextInput
+            placeholder={'6 digits verification  code'}
+            style={StyleSheet.flatten(styles.input)}
+            keyboardType={'number-pad'}
+            maxLength={6}
+            onChangeText={onChange}
+            value={value}
+            onBlur={onBlur}
+          />
+        )}
+      />
       <WhiteSpace size={18} />
-      <Button primary disabled>
+      <Button
+        primary
+        large
+        disabled={disabled}
+        onPress={handleSubmit(onVerifyCode)}
+        loading={isSubmitting}
+      >
         <Flex>
-          <Text style={styles.signUpBtn}>Verify / Verifing</Text>
+          <Text style={styles.signUpBtn}>Verify</Text>
           <Image source={icon} style={styles.arrow} />
           {/*图标loading*/}
         </Flex>
@@ -53,7 +93,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     minHeight: 500
   },
-  header:{
+  header: {
     marginBottom: 18
   },
   arrow: {
@@ -65,20 +105,20 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "400",
     color: 'rgba(161, 161, 161, 1)',
-    lineHeight:16,
+    lineHeight: 16,
   },
-  headerTextCode:{
+  headerTextCode: {
     fontSize: 14,
     fontWeight: "bold",
     color: 'rgba(161, 161, 161, 1)',
-    lineHeight:16,
+    lineHeight: 16,
   },
   dText: {
     color: "rgba(161, 161, 161, 1)",
     fontSize: 14
   },
   footerText: {
-    color: "rgba(161, 161, 161, 1)\n",
+    color: "rgba(161, 161, 161, 1)",
     fontSize: 14,
     textAlign: 'center'
   },

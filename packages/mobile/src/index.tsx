@@ -35,7 +35,7 @@ ThemeManager.loadTheme({
     default: {
       borderWidth: 1,
       borderColor: Colors.border,
-      backgroundColor: Colors.white
+      backgroundColor: Colors.white,
     },
     primary: {
       backgroundColor: Colors.primary,
@@ -61,7 +61,10 @@ ThemeManager.loadTheme({
       backgroundColor: Colors.warning,
       borderColor: Colors.warning,
     },
-    disabled: {},
+    disabled: {
+      backgroundColor: Colors.weak,
+      borderColor: Colors.weak,
+    },
     dashed: {
       borderStyle: "dashed",
     },
@@ -86,7 +89,7 @@ ThemeManager.loadTheme({
     },
     large: {
       paddingHorizontal: 12,
-      paddingVertical: 14,
+      paddingVertical: 15,
       borderRadius: 6,
     },
     fillOutline: {
@@ -148,7 +151,7 @@ ThemeManager.loadTheme({
         fontWeight: "bold",
       },
       disabled: {
-        color: 'red',
+
       },
       fillNone: {
         color: Colors.primary

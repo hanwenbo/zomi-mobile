@@ -1,4 +1,5 @@
 import React, {useState, useRef, useEffect} from 'react'
-import Demo from "../step2"
-
-export default Demo
+import VerifyCode from "../verifyCode"
+export default ()=>{
+  return <VerifyCode />
+}

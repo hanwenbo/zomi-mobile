@@ -2361,16 +2361,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hanwenbo/ui-mobile@npm:^0.0.15":
-  version: 0.0.15
-  resolution: "@hanwenbo/ui-mobile@npm:0.0.15"
+"@hanwenbo/ui-mobile@npm:^0.0.24":
+  version: 0.0.24
+  resolution: "@hanwenbo/ui-mobile@npm:0.0.24"
   dependencies:
     "@react-spring/web": ^9.4.4
     ahooks: ^3.3.0
     antd-mobile-icons: ^0.2.2
     deepmerge: ^4.2.2
     react-native-web: ^0.17.7
-  checksum: b1bb66a7a2e123c23d458a0821629fa805d1e218ecd2dcaea59e2319a9dd122e07724567492f99b9d76370131c419e570dccd4d048a17022a0125c50af1d20c0
+  checksum: 63042a5a1d18ec65d59e069478cf3e827330515670a2538294f96c6ddebf4df6d7d9fee16425819034afae5fd21ce836930993bc61ca8df00e84eed9d2b8f539
   languageName: node
   linkType: hard
 
@@ -2386,7 +2386,7 @@ __metadata:
   dependencies:
     "@hanwenbo/array": ^0.0.5
     "@hanwenbo/object": ^0.0.6
-    "@hanwenbo/ui-mobile": ^0.0.15
+    "@hanwenbo/ui-mobile": ^0.0.24
     "@react-spring/web": ^9.4.4
     "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
@@ -2403,6 +2403,7 @@ __metadata:
     husky: 5.1.2
     lorem-ipsum: ^2.0.4
     qrcode.react: ^3.0.1
+    react-hook-form: ^7.29.0
     react-native-web: ^0.17.7
     testing: ^2.0.1
     typescript: 4.5.2
@@ -17877,6 +17878,15 @@ fsevents@~2.1.2:
   peerDependencies:
     react: ^16.14.0
   checksum: 5a5c49da0f106b2655a69f96c622c347febcd10532db391c262b26aec225b235357d9da1834103457683482ab1b229af7a50f6927a6b70e53150275e31785544
+  languageName: node
+  linkType: hard
+
+"react-hook-form@npm:^7.29.0":
+  version: 7.29.0
+  resolution: "react-hook-form@npm:7.29.0"
+  peerDependencies:
+    react: ^16.8.0 || ^17 || ^18
+  checksum: 4379f972c916d01f4706c27c0fb207b1676b382fc4803ee557edf77cb2355ff320a659940325fda81c1f4fd799e685a6e228577c1050e5b8c32e815884d0defe
   languageName: node
   linkType: hard
 

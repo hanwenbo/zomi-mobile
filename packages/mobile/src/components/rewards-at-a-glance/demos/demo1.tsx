@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import {
   StyleSheet,
 } from '@hanwenbo/ui-mobile'
-import GlanceFloatingPanel from '../index'
+import {RewardsAtAGlance} from 'zomi-mobile'
 
 
 export default () => {
@@ -20,7 +20,7 @@ export default () => {
         内容高斯模糊
       </div>
       <div>
-        <GlanceFloatingPanel
+        <RewardsAtAGlance
           onHeightChange={setFloatingHeight}
         />
       </div>
