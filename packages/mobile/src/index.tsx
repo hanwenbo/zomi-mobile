@@ -3,6 +3,7 @@ import {ThemeManager} from "@hanwenbo/ui-mobile"
 import MyRewards from "./components/my-rewards"
 import Popup from "./components/popup"
 import RewardsAtAGlance from "./components/rewards-at-a-glance";
+import Slider from "./components/slider";
 
 const Colors = {
   primary: 'rgba(0, 0, 0, 1)',
@@ -21,12 +22,14 @@ export {
   MyRewards,
   RewardsAtAGlance,
   Popup,
+  Slider
 }
 
 export default {
   MyRewards,
   RewardsAtAGlance,
   Popup,
+  Slider
 }
 
 ThemeManager.loadTheme({
