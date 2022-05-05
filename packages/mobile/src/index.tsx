@@ -4,6 +4,7 @@ import MyRewards from "./components/my-rewards"
 import Popup from "./components/popup"
 import RewardsAtAGlance from "./components/rewards-at-a-glance";
 import Slider from "./components/slider";
+import Notice from "./components/notice"
 
 const Colors = {
   primary: 'rgba(0, 0, 0, 1)',
@@ -22,14 +23,16 @@ export {
   MyRewards,
   RewardsAtAGlance,
   Popup,
-  Slider
+  Slider,
+  Notice
 }
 
 export default {
   MyRewards,
   RewardsAtAGlance,
   Popup,
-  Slider
+  Slider,
+  Notice
 }
 
 ThemeManager.loadTheme({
