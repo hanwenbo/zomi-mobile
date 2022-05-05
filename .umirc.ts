@@ -6,6 +6,8 @@ export default {
     'zomi-mobile': join(__dirname, 'packages/mobile/src'),
     // '@hanwenbo/ui-mobile': join(__dirname, 'node_modules/@hanwenbo/ui-mobile/src'),
     'demos': join(__dirname, 'demos'),
+    'react-native': 'react-native-web',
+    'react-native-linear-gradient': 'react-native-web-linear-gradient',
   },
   hash: true,
   base: '/zomi-mobile/',

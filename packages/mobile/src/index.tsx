@@ -6,6 +6,7 @@ import RewardsAtAGlance from "./components/rewards-at-a-glance";
 import Slider from "./components/slider";
 import Notice from "./components/notice"
 import StoreNav from "./components/store-nav"
+import ImageCard from "./components/image-card"
 
 const Colors = {
   primary: 'rgba(0, 0, 0, 1)',
@@ -26,7 +27,8 @@ export {
   Popup,
   Slider,
   Notice,
-  StoreNav
+  StoreNav,
+  ImageCard
 }
 
 export default {
@@ -35,7 +37,8 @@ export default {
   Popup,
   Slider,
   Notice,
-  StoreNav
+  StoreNav,
+  ImageCard
 }
 
 ThemeManager.loadTheme({
