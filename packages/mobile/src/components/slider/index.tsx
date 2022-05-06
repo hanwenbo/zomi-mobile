@@ -35,6 +35,10 @@ export default () => {
         thumbStyle={{
           display: "none"
         }}
+        markStyle={{
+          fontWeight:"bold",
+          color:"#000"
+        }}
       />
     </View>
     <View style={{

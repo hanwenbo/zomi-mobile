@@ -7,6 +7,7 @@ import Slider from "./components/slider";
 import Notice from "./components/notice"
 import StoreNav from "./components/store-nav"
 import ImageCard from "./components/image-card"
+import SignUp from "./components/sign-up"
 
 const Colors = {
   primary: 'rgba(0, 0, 0, 1)',
@@ -28,7 +29,8 @@ export {
   Slider,
   Notice,
   StoreNav,
-  ImageCard
+  ImageCard,
+  SignUp
 }
 
 export default {
@@ -38,7 +40,8 @@ export default {
   Slider,
   Notice,
   StoreNav,
-  ImageCard
+  ImageCard,
+  SignUp
 }
 
 ThemeManager.loadTheme({
