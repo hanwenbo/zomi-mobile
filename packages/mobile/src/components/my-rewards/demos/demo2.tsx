@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Slider
 } from '@hanwenbo/ui-mobile'
-import {MyRewards} from "zomi-mobile"
+import {MyRewards,initTheme} from "zomi-mobile"
 
 const {ClaimRewards, CurrentReward, Redeem} = MyRewards
 
@@ -16,6 +16,7 @@ const defaultHeight = 520
 const anchors = [0, defaultHeight, 520]
 
 export default () => {
+  initTheme()
   const [floatingHeight, setFloatingHeight] = useState(0);
   const floatRef = useRef(null);
   useEffect((e) => {

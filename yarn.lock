@@ -2361,16 +2361,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hanwenbo/ui-mobile@npm:^0.0.25":
-  version: 0.0.25
-  resolution: "@hanwenbo/ui-mobile@npm:0.0.25"
+"@hanwenbo/ui-mobile@npm:^0.0.27":
+  version: 0.0.27
+  resolution: "@hanwenbo/ui-mobile@npm:0.0.27"
   dependencies:
     "@react-spring/web": ^9.4.4
     ahooks: ^3.3.0
     antd-mobile-icons: ^0.2.2
     deepmerge: ^4.2.2
-    react-native-web: ^0.17.7
-  checksum: 1ba73500e3d7df383f1d708e2e1a4a24fe60713f07ab9ad0903377daea4a1263dd7c9f391750c2c4dafe0de424fcad520437e53937a56d767a0180bac62c8905
+  peerDependencies:
+    react-native-web: "*"
+  checksum: 552668313c74d39b2b852e348f95a3bd8062fef1e3a0655a548e35b734b25f300338e6123ae8bdbb6ebec9afe801c054052f2d96282e2d5de5e010dcef0017b0
   languageName: node
   linkType: hard
 
@@ -2386,7 +2387,7 @@ __metadata:
   dependencies:
     "@hanwenbo/array": ^0.0.5
     "@hanwenbo/object": ^0.0.6
-    "@hanwenbo/ui-mobile": ^0.0.25
+    "@hanwenbo/ui-mobile": ^0.0.27
     "@react-spring/web": ^9.4.4
     "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
@@ -5688,8 +5689,8 @@ __metadata:
   linkType: hard
 
 "ahooks@npm:^3.3.0":
-  version: 3.3.0
-  resolution: "ahooks@npm:3.3.0"
+  version: 3.3.10
+  resolution: "ahooks@npm:3.3.10"
   dependencies:
     "@types/js-cookie": ^2.x.x
     ahooks-v3-count: ^1.0.0
@@ -5701,7 +5702,7 @@ __metadata:
     screenfull: ^5.0.0
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: 2eb939287d76c29fdba596a4c6bfab6775cf24a11352a1e4e85f1eaaa6a1087efe9e268743fe5c909c8fd1508cad616715f9fb4e239842e6f69c1ca7f1ad5f06
+  checksum: 4084f9910bb86b6a9ad216ae035d62da4967c879d99a36a9c0da58cc3f19280de99fc2b89eece66b2abd69ce0d4e8f920b0c4bf134f97106958dcf5a2362ee56
   languageName: node
   linkType: hard
 
@@ -8457,9 +8458,9 @@ __metadata:
   linkType: hard
 
 "dayjs@npm:^1.9.1":
-  version: 1.11.0
-  resolution: "dayjs@npm:1.11.0"
-  checksum: 2d36f6d71345114cdcd89147adf9e05b4f8fe81684e08c8bf1f86b140aa0b86ecc3cae661a9348d96feb7fbefd03e1bc3697303688e95209670abcb36b4ece15
+  version: 1.11.2
+  resolution: "dayjs@npm:1.11.2"
+  checksum: 78f8bd04a9e5f5554aa06eacda65a7d59e162d39f621a46fd34fb3b51367c3662426d86b4e2f4ac535f81e0c4d5af3e8a83b37e672412eb556267d726c61f8f3
   languageName: node
   linkType: hard
 

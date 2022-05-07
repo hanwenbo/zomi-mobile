@@ -1,22 +1,25 @@
-import React from 'react'
-import {DemoBlock} from 'demos'
-import {ImageCard,initTheme} from "zomi-mobile"
-import {View, Image, Text, StyleSheet, TouchableOpacity} from "@hanwenbo/ui-mobile"
+import React, {useRef} from 'react'
+import {initTheme, Collapse, ImageCard, SignUp} from "zomi-mobile"
+import {Image, View, Text, TouchableOpacity, StyleSheet, useWindowDimensions} from "@hanwenbo/ui-mobile"
 import LinearGradient from "react-native-web-linear-gradient"
 
 export default () => {
   initTheme()
+  const {width: windowWidth} = useWindowDimensions()
+  const ref = useRef<Collapse>()
   return (
     <>
-      <DemoBlock title='默认' padding='13px'>
-        <ImageCard
+      <Collapse
+        ref={ref}
+        headerTransitionY={windowWidth * 0.70}
+        header={<ImageCard
           style={{margin: 15}}
           borderRadius={6}
           image={<Image
             source={{uri: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F0RR0153425%2F200RQ53425-5-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654333963&t=d431559ca27cef4d4ed721f3116ffda6"}}
             style={{
-              width: 375 - 60,
-              height: 375 - 60
+              width: windowWidth - 30,
+              height: windowWidth - 30
             }}
           />}
         >
@@ -29,48 +32,42 @@ export default () => {
             </LinearGradient>
             <View style={styles.footer}>
               <TouchableOpacity activeOpacity={0.8} onPress={() => {
-
+                ref?.current?.open()
               }}>
                 <View style={styles.button}>
                   <Text style={styles.buttonText}>Subscribe now</Text>
                 </View>
               </TouchableOpacity>
+
             </View>
           </View>
-        </ImageCard>
-      </DemoBlock>
-      <DemoBlock title='注意，重色图片看不清楚按钮，可以加个白色边框' padding='13px'>
-        <ImageCard
+        </ImageCard>}
+
+        footer={<ImageCard
           style={{margin: 15}}
           borderRadius={6}
           image={<Image
-            source={{uri: "https://img2.baidu.com/it/u=381412217,2118678125&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500"}}
+            source={{uri: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F0RR0153425%2F200RQ53425-5-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654333963&t=d431559ca27cef4d4ed721f3116ffda6"}}
             style={{
-              width: 375 - 60,
-              height: 375 - 60
+              width: windowWidth - 30,
+              height: windowWidth - 30
             }}
           />}
         >
           <View style={styles.content}>
             <LinearGradient style={styles.header} colors={['rgba(0, 0, 0, 0.45)', 'rgba(0, 0, 0, 0)']}>
               <View style={styles.header}>
-                <Text style={styles.title}>看不清楚是按钮</Text>
+                <Text style={styles.title}>Do you want to be rewarded?
+                  You came to the right place.</Text>
               </View>
             </LinearGradient>
-            <View style={styles.footer}>
-              <TouchableOpacity activeOpacity={0.8} onPress={() => {
-
-              }}>
-                <View style={[styles.button,{
-                  borderWidth:0
-                }]}>
-                  <Text style={styles.buttonText}>Subscribe now</Text>
-                </View>
-              </TouchableOpacity>
-            </View>
           </View>
-        </ImageCard>
-      </DemoBlock>
+        </ImageCard>}
+      >
+        <SignUp onGoogle={() => {
+          ref?.current?.close()
+        }} />
+      </Collapse>
     </>
   )
 }
@@ -101,8 +98,8 @@ const styles = StyleSheet.create({
     width: 229,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth:2,
-    borderColor:"#FFFFFF"
+    borderWidth: 2,
+    borderColor: "#FFFFFF"
   },
   buttonText: {
     color: "#FFFFFF",

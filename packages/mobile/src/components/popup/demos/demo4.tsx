@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import {Space, Button, View, Text, StyleSheet, Image} from '@hanwenbo/ui-mobile'
-import {Popup} from 'zomi-mobile'
+import {Popup,initTheme} from 'zomi-mobile'
 import {DemoBlock} from 'demos'
 
 export default () => {
+  initTheme()
+
   const [visible1, setVisible1] = useState(true)
   return (
     <View style={{

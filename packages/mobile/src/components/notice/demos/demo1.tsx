@@ -1,8 +1,9 @@
 import React from 'react'
 import {DemoBlock} from 'demos'
-import {Notice} from "zomi-mobile"
+import {Notice,initTheme} from "zomi-mobile"
 
 export default () => {
+  initTheme()
   return (
     <>
       <DemoBlock title='默认' padding='13px'>

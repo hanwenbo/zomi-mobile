@@ -16,8 +16,9 @@ export type StoreNavProps = {
   description?: string
   back?: boolean
   onBackPress?: () => void
-  nameStyle: object
-  descriptionStyle: object
+  nameStyle?: object
+  descriptionStyle?: object
+  onPress?: () => void
 }
 
 
@@ -26,12 +27,13 @@ const defaultProps = {
   name: '',
   description: '',
   back: true,
+  onPress: () => {
+  },
   onBackPress: () => {
   },
   nameStyle: {},
   descriptionStyle: {},
 }
-
 export const StoreNav: FC<StoreNavProps> = p => {
   const props = mergeProps(defaultProps, p)
   return <TouchableOpacity onPress={props.onPress} activeOpacity={1}>

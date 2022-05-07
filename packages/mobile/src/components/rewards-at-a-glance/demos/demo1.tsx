@@ -3,11 +3,12 @@ import {
   StyleSheet,
 } from '@hanwenbo/ui-mobile'
 import {RewardsAtAGlance} from 'zomi-mobile'
+import {initTheme} from "zomi-mobile"
 
 
 export default () => {
+  initTheme()
   const [floatingHeight, setFloatingHeight] = useState(0);
-
   return (
     <div style={{
       backgroundColor: "#333",

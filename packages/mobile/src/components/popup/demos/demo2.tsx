@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import {Space, Button, View, Text, StyleSheet, Image} from '@hanwenbo/ui-mobile'
-import {Popup} from 'zomi-mobile'
+import {Popup,initTheme} from 'zomi-mobile'
 import {DemoBlock, lorem} from 'demos'
 
 export default () => {
+  initTheme()
+
   const [visible1, setVisible1] = useState(true)
   const icon = 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png'
   return (

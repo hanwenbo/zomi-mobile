@@ -13,7 +13,7 @@ import {
 import {Controller, useForm} from "react-hook-form";
 
 
-export default () => {
+export default ({onGoogle}) => {
   const icon = require('./arrow.png')
   const google = require('./google.png')
 
@@ -24,19 +24,15 @@ export default () => {
   });
   const watchAllFields = watch();
 
-  const onGoogle = () => {
-
-  }
 
 
   const onVerifyCode = (values) => {
     console.warn('values',values)
-
   }
   const disabled = !watchAllFields.phoneNumber
 
   return <View style={styles.main}>
-    <View>
+    <View style={styles.inner}>
       <Button blue large onPress={onGoogle}>
         <Flex>
           <Image source={google} style={styles.gIcon} />
@@ -83,8 +79,12 @@ export default () => {
 const styles = StyleSheet.create({
   main: {
     padding: 18,
-    justifyContent: "space-between",
-    minHeight: 500
+    justifyContent: "center",
+    width:"100vw",
+    height: '100vh',
+  },
+  inner:{
+    // height: '100vh',
   },
   gIcon: {
     width: 18,
@@ -104,10 +104,16 @@ const styles = StyleSheet.create({
     color: "rgba(161, 161, 161, 1)",
     fontSize: 14
   },
+  footer:{
+    position:"absolute",
+    bottom:0,
+    left:0,
+    paddingBottom:18
+  },
   footerText: {
     color: "rgba(161, 161, 161, 1)",
     fontSize: 14,
-    textAlign: 'center'
+    textAlign: 'center',
   },
   input: {
     borderColor: 'rgba(209, 209, 209, 1)',

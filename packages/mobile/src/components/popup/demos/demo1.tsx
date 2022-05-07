@@ -1,9 +1,11 @@
 import React, {useState} from 'react'
 import {Space, Button} from '@hanwenbo/ui-mobile'
-import {Popup} from 'zomi-mobile'
+import {Popup,initTheme} from 'zomi-mobile'
 import {DemoBlock, lorem} from 'demos'
 
 export default () => {
+  initTheme()
+
   const [visible1, setVisible1] = useState(false)
   const [visible2, setVisible2] = useState(false)
   const [visible3, setVisible3] = useState(false)
