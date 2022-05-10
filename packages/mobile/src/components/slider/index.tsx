@@ -3,10 +3,10 @@ import {Slider, View} from "@hanwenbo/ui-mobile";
 
 export default () => {
   const marks = {
-    0: 5,
-    33: 10,
-    66: 15,
-    100: 20,
+    0: '一',
+    33: '二',
+    66: '三',
+    100: '四',
   }
   return <View style={{
     flexDirection: "row",
@@ -30,10 +30,13 @@ export default () => {
         ticks
         marks={marks}
         defaultValue={50}
-        disabled
+        // disabled
         fillColor={'#000'}
         thumbStyle={{
           display: "none"
+        }}
+        onChange={(e)=>{
+        console.warn('e',e)
         }}
         markStyle={{
           fontWeight:"bold",

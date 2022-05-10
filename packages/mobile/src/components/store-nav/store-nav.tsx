@@ -40,8 +40,8 @@ export const StoreNav: FC<StoreNavProps> = p => {
     <View style={styles.content}>
       <View style={styles.left}>
         {!!props.logo && <Image source={props.logo} style={styles.logo} />}
-        {props.name && <Text style={[styles.name, props.nameStyle]} numberOfLines={1}>{props.name}</Text>}
-        {props.description &&
+        {!!props.name && <Text style={[styles.name, props.nameStyle]} numberOfLines={1}>{props.name}</Text>}
+        {!!props.description &&
           <Text style={[styles.description, props.descriptionStyle]} numberOfLines={1}>{props.description}</Text>}
       </View>
       {props.back && <TouchableOpacity onPress={props.onBackPress}>

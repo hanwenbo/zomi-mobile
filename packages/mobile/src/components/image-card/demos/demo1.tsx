@@ -1,13 +1,66 @@
 import React from 'react'
 import {DemoBlock} from 'demos'
-import {ImageCard,initTheme} from "zomi-mobile"
-import {View, Image, Text, StyleSheet, TouchableOpacity} from "@hanwenbo/ui-mobile"
+import {ImageCard, initTheme} from "zomi-mobile"
+import {View, Image, Text, StyleSheet, TouchableOpacity, WingBlank} from "@hanwenbo/ui-mobile"
 import LinearGradient from "react-native-web-linear-gradient"
 
 export default () => {
   initTheme()
   return (
     <>
+      <DemoBlock title='名字+二维码' padding='13px'>
+        <ImageCard
+          style={{margin: 15}}
+          borderRadius={6}
+          image={<Image
+            source={{uri: "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fimg.jj20.com%2Fup%2Fallimg%2F1114%2F0RR0153425%2F200RQ53425-5-1200.jpg&refer=http%3A%2F%2Fimg.jj20.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1654333963&t=d431559ca27cef4d4ed721f3116ffda6"}}
+            style={{
+              width: 375 - 60,
+              height: 375 - 60
+            }}
+          />}
+        >
+          <View style={styles.content}>
+            <LinearGradient style={styles.header} colors={['rgba(0, 0, 0, 0.45)', 'rgba(0, 0, 0, 0)']}>
+              <TouchableOpacity activeOpacity={0.8} onPress={() => {
+              }}>
+                <View style={[styles.header, {
+                  minHeight: "auto",
+                  flexDirection: "row",
+                  alignItems: "center"
+                }]}>
+                  <Text style={styles.title}>Name</Text>
+                  <Image source={require("./qr.png")} style={{
+                    width: 18,
+                    height: 18,
+                    marginLeft: 15
+                  }} />
+                </View>
+              </TouchableOpacity>
+            </LinearGradient>
+            <LinearGradient style={styles.header} colors={['rgba(0, 0, 0, 0)', 'rgba(0, 0, 0, 0.45)']}>
+              <View style={styles.footer}>
+                <WingBlank size={12}>
+                  <TouchableOpacity activeOpacity={0.8} onPress={() => {
+                  }}>
+                    <View style={{
+                      flexDirection: "row",
+                      alignItems: "center"
+                    }}>
+                      <Text style={styles.title}>Check-in here to
+                        unbox more rewards!</Text>
+                      <Image source={require("./add.png")} style={{
+                        width: 30,
+                        height: 30
+                      }} />
+                    </View>
+                  </TouchableOpacity>
+                </WingBlank>
+              </View>
+            </LinearGradient>
+          </View>
+        </ImageCard>
+      </DemoBlock>
       <DemoBlock title='默认' padding='13px'>
         <ImageCard
           style={{margin: 15}}
@@ -61,8 +114,8 @@ export default () => {
               <TouchableOpacity activeOpacity={0.8} onPress={() => {
 
               }}>
-                <View style={[styles.button,{
-                  borderWidth:0
+                <View style={[styles.button, {
+                  borderWidth: 0
                 }]}>
                   <Text style={styles.buttonText}>Subscribe now</Text>
                 </View>
@@ -101,8 +154,8 @@ const styles = StyleSheet.create({
     width: 229,
     alignItems: "center",
     justifyContent: "center",
-    borderWidth:2,
-    borderColor:"#FFFFFF"
+    borderWidth: 2,
+    borderColor: "#FFFFFF"
   },
   buttonText: {
     color: "#FFFFFF",
