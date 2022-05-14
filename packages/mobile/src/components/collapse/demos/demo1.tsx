@@ -11,7 +11,7 @@ export default () => {
     <>
       <Collapse
         ref={ref}
-        headerTransitionY={windowWidth * 0.70}
+        headerTransitionY={windowWidth * 0.95}
         header={<ImageCard
           style={{margin: 15}}
           borderRadius={6}

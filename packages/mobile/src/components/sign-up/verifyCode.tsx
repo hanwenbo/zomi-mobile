@@ -11,36 +11,56 @@ import {
   TextInput
 } from '@hanwenbo/ui-mobile'
 import {Controller, useForm} from "react-hook-form";
+import {initTheme} from "zomi-mobile"
+import useInterval from "@jdthornton/useinterval";
+import numberFormat from '@pansy/number-format';
 
 export default () => {
+  initTheme()
   const icon = "https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png"
+  const defaultTimes = 3 * 60
+  const [isCountActive, setIsCountActive] = useState(true);
+  const [count, setCount] = useState(defaultTimes);
+  useInterval(
+    () => setCount(prevCount => {
+      const res = prevCount - 1
+      if (res === 0) {
+        setIsCountActive(false)
+      }
+      return res > 0 ? res : 0
+    }),
+    isCountActive ? 1000 : null
+  )
+  const onResend = () => {
+    setIsCountActive(true)
+    setCount(defaultTimes)
+  }
 
   const {control, setValue, setError, watch, handleSubmit, formState: {errors, isSubmitting}} = useForm({
     defaultValues: {
       verificationCode: "",
     }
   });
-  const [step, setStep] = useState(1);
   const watchAllFields = watch();
 
   const disabled = !watchAllFields.verificationCode
 
   const onVerifyCode = async (values) => {
-
+    console.warn(values)
   }
 
   return <View style={styles.main}>
-    <View>
+    <View style={styles.inner}>
       <View style={styles.header}>
         <Text style={styles.headerText}>We have sent you a verification code to</Text>
         <Text style={styles.headerTextCode}>123 123 1234</Text>
         <Text style={styles.headerText}>It may take up to 3 minuts to receive your message.</Text>
       </View>
       <Flex>
-        <Button
-          primary
-        >Resend</Button>
-        <Text style={styles.signUpBtn}>Time countdown</Text>
+        <Button primary disabled={count !== 0} style={styles.resend} onPress={onResend}><Text
+          style={styles.resendText}>Resend</Text></Button>
+        {count !== 0 && <Text style={styles.signUpBtn}>{count}</Text>}
+
       </Flex>
       <WhiteSpace size={18} />
       <Divider><Text style={styles.dText}>Verification</Text></Divider>
@@ -54,17 +74,27 @@ export default () => {
             message: "Verification code is required"
           },
         }}
-        render={({field: {onChange, onBlur, value}}) => (
-          <TextInput
+        render={({field: {onChange, onBlur, value}}) => {
+          let formatValue = value.replace(/ /g, '')
+          if(formatValue.length>3){
+            formatValue = numberFormat({template: '### ###'}).format(value)
+          }
+          // 防止空格删不掉
+          if(formatValue[formatValue.length-1] === "") {
+            formatValue = formatValue.substring(0, formatValue.length-1)
+          }
+          return <TextInput
             placeholder={'6 digits verification  code'}
             style={StyleSheet.flatten(styles.input)}
             keyboardType={'number-pad'}
-            maxLength={6}
-            onChangeText={onChange}
-            value={value}
+            maxLength={7}
+            onChangeText={(e)=>{
+              onChange(e.replace(/ /g, ''))
+            }}
+            value={formatValue}
             onBlur={onBlur}
           />
-        )}
+        }}
       />
       <WhiteSpace size={18} />
       <Button
@@ -80,6 +110,7 @@ export default () => {
           {/*图标loading*/}
         </Flex>
       </Button>
+      <Text>{JSON.stringify(watchAllFields)}</Text>
     </View>
     <View style={styles.footer}>
       <Text style={styles.footerText}>Powered by ZOMI.</Text>
@@ -90,8 +121,9 @@ export default () => {
 const styles = StyleSheet.create({
   main: {
     padding: 18,
-    justifyContent: "space-between",
-    minHeight: 500
+    justifyContent: 'center',
+    width: '100vw',
+    height: '100vh',
   },
   header: {
     marginBottom: 18
@@ -117,16 +149,31 @@ const styles = StyleSheet.create({
     color: "rgba(161, 161, 161, 1)",
     fontSize: 14
   },
-  footerText: {
-    color: "rgba(161, 161, 161, 1)",
-    fontSize: 14,
-    textAlign: 'center'
-  },
   input: {
     borderColor: 'rgba(209, 209, 209, 1)',
     borderWidth: 1,
     borderRadius: 4,
     padding: 12,
-    textAlign: "center"
-  }
+    textAlign: 'center',
+  },
+  footer: {
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    paddingBottom: 58,
+    paddingHorizontal: 15,
+    width: '100vw'
+  },
+  footerText: {
+    color: 'rgba(161, 161, 161, 1)',
+    fontSize: 14,
+    textAlign: 'center',
+  },
+  resend: {
+    marginRight: 24,
+  },
+  resendText: {
+    fontSize: 14,
+    color: "#FFFFFF"
+  },
 })

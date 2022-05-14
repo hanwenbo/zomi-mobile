@@ -11,8 +11,11 @@ import {
   TextInput,
 } from '@hanwenbo/ui-mobile';
 import { Controller, useForm } from 'react-hook-form';
+import {initTheme} from "zomi-mobile"
 
 export default ({ onGoogle }) => {
+  initTheme()
+
   const icon = require('./arrow.png');
   const google = require('./google.png');
 
@@ -122,7 +125,8 @@ const styles = StyleSheet.create({
     bottom: 0,
     left: 0,
     paddingBottom: 58,
-    paddingHorizontal:15
+    paddingHorizontal:15,
+    width:'100vw'
   },
   footerText: {
     color: 'rgba(161, 161, 161, 1)',

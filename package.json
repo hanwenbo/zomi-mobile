@@ -41,6 +41,8 @@
     "@hanwenbo/array": "^0.0.5",
     "@hanwenbo/object": "^0.0.6",
     "@hanwenbo/ui-mobile": "^0.0.27",
+    "@jdthornton/useinterval": "^1.0.3",
+    "@pansy/number-format": "^1.1.1",
     "@react-spring/web": "^9.4.4",
     "react-hook-form": "^7.29.0",
     "react-native-web": "^0.17.7",

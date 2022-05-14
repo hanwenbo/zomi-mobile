@@ -2388,6 +2388,8 @@ __metadata:
     "@hanwenbo/array": ^0.0.5
     "@hanwenbo/object": ^0.0.6
     "@hanwenbo/ui-mobile": ^0.0.27
+    "@jdthornton/useinterval": ^1.0.3
+    "@pansy/number-format": ^1.1.1
     "@react-spring/web": ^9.4.4
     "@types/react": ^17.0.43
     "@types/react-dom": ^17.0.14
@@ -2453,6 +2455,22 @@ __metadata:
   version: 0.1.3
   resolution: "@istanbuljs/schema@npm:0.1.3"
   checksum: 5282759d961d61350f33d9118d16bcaed914ebf8061a52f4fa474b2cb08720c9c81d165e13b82f2e5a8a212cc5af482f0c6fc1ac27b9e067e5394c9a6ed186c9
+  languageName: node
+  linkType: hard
+
+"@jdthornton/usecallbackref@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@jdthornton/usecallbackref@npm:1.0.2"
+  checksum: 493f54a2ded321adb4b2def6f93ec3d114200cd1f0df4209c223fea7d8090f18a2251e8fceac5a4da0b538a74c3d5725b4c7d993a24fc4f392ce821a913c116e
+  languageName: node
+  linkType: hard
+
+"@jdthornton/useinterval@npm:^1.0.3":
+  version: 1.0.3
+  resolution: "@jdthornton/useinterval@npm:1.0.3"
+  dependencies:
+    "@jdthornton/usecallbackref": ^1.0.2
+  checksum: 0ac3b92a3f1efc56dbbfd72204487ec6aeaf9b5e5b499b2a55accd4310f1994ddbd63aed9fb15fcc7f102051ac08d1811123adb6d95da4509edc05dfcc5a4194
   languageName: node
   linkType: hard
 
@@ -3793,6 +3811,13 @@ __metadata:
   dependencies:
     "@octokit/openapi-types": ^11.2.0
   checksum: f122b9aee8f6baddd515e34a0913e73b21d4bc82d6ee59d77a8aaf01b4a02c10867dd013003d087a83dc96db23511893669015af6d30c27cece185e21cf1df89
+  languageName: node
+  linkType: hard
+
+"@pansy/number-format@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "@pansy/number-format@npm:1.1.1"
+  checksum: a26ee4e6c26f89644827e0e16d883d4e150ee4c51e07f8e9d6914d0026aa73226f8c4ccaed5da847925035535498f7e2ea565d9d8d76dd643295e62141e8ee54
   languageName: node
   linkType: hard
 
