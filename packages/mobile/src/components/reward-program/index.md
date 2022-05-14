@@ -1,5 +1,10 @@
 # Reward Program
 
+
+## Redeem
+<code src="./demos/redeem.tsx"></code>
+
+
 ## Your Progess towards *NEXT TIER*
 <code src="./demos/yourProgressBar.tsx"></code>
 
@@ -17,6 +22,3 @@
 
 ## Program Highlights
 <code src="./demos/programHighlights.tsx"></code>
-
-## Redeem
-<code src="./demos/redeem.tsx"></code>
